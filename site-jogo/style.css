@@ -1,61 +1,65 @@
-body{
-    font-family: Arial, sans-serif;
+body {
     margin: 0;
     padding: 0;
-    background-color: #0f0f0f;
+    background-color: #0A1128; /* Ou #9bb2ff */
 }
-header{
-    background-color: #1b072e;
-    color: white;
-    padding: 10px 20px;
+
+nav {
+    font-family:Arial, Helvetica, sans-serif;
+    background-color: #060b1a;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    justify-content: space-between; /* Deixa cada item nas extremidades */
+    color:#B1B7D1;
+    padding:20px 30px;
+    margin: 0;
+    box-shadow: 0 2px 9px rgba(255, 255, 255, 0.3);
+    font-weight: 900;
 }
-/* Estilo para o logo */
-.logo_jogo {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 2rem;
-    font-weight: bold;
-    letter-spacing: 2px;
-    margin-left: 6px;
-}
-header nav ul{
-    list-style: none;
+
+.links {
     display: flex;
+    gap: 15px;
 }
-nav a{
+nav a {
+    color:#B1B7D1;
     text-decoration: none;
-    color: white;
-    padding: 15px;
-    transition: all 0.3s ease;
+    margin: 0 10px;
+    transition: color 0.2s;
 }
 
-nav a:hover{
-    background-color: #3e0a4f;
-    border-radius: 70px;
-    text-transform:capitalize;
-}
-main{
-    padding: 20px;
-    color: white;
+nav a:hover {
+    color:#5967ff;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 18px;
 }
 
-.inicio_jogo {
-    background-color: #3e0a4f;
-    height: 100px;
-    width: 100%;
-    margin-top: 10px;
-    line-height: 100px; /* Centraliza verticalmente o texto */
-    text-align: center;
-    border-radius: 7px;
+#game_name{
+    color:#5967ff;
+    margin-left: 15px;
 }
-footer{
-    background-color: #1b072e;
-    color: white;
-    text-align: center;
-    padding: 5px 20px;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+
+#tema{
+    background-color: #9bb2ff;
+    position:fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 25%;
+    border-color: #5967ff;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    color:#B1B7D1;
+    
 }
+#tema:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 0 20px rgba(89, 103, 255, 0.7);
+}
+
+ #tema svg { 
+    width: 24px; 
+    height: 24px; 
+    fill: currentColor; 
+    color: var(--text); }

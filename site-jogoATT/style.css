@@ -1,0 +1,165 @@
+:root{
+    --bg-main: #9bb2ff; /* Cor de fundo principal clara */
+    --bg-nav: #060b1a;
+    --text-primary: #B1B7D1; /* Cor de texto principal */
+    --accent-color: #5967ff;
+    --button-bg: #0A1128;
+    --button-icon-color: #9bb2ff;
+    --shadow-color: rgba(255, 255, 255, 0.3);
+}
+
+.dark-theme{
+    --bg-main: #0A1128; /* Cor de fundo principal escura */
+    --bg-nav: #060b1a; /* Ou #040810; */
+    --text-primary: #B1B7D1; /* Ou #9bb2ff; */
+    --accent-color: #5967ff;
+    --button-bg: #9bb2ff;
+    --button-icon-color: #0A1128;
+    --shadow-color: rgba(0, 0, 0, 0.3); /* Ou rgba(89, 103, 255, 0.5) ou rgba(0, 0, 0, 0.3); */
+}
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-main); /* Ou #9bb2ff (claro)  /// #0A1128 (escuro)  */
+}
+
+nav {
+    font-family:Arial, Helvetica, sans-serif;
+    background-color: var(--bg-nav);
+    display: flex;
+    justify-content: space-between; /* Deixa cada item nas extremidades */
+    color: var(--text-primary); /* #B1B7D1 */
+    padding:20px 30px;
+    margin: 0;
+    box-shadow: 0 2px 9px var(--shadow-color);
+    font-weight: 900;
+}
+
+.links {
+    display: flex;
+    gap: 30px;
+}
+nav a {
+    color: var(--text-primary); /* #B1B7D1 */
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+nav a:hover {
+    color: var(--accent-color); /* #5967ff */
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 18px;
+}
+
+#game_name{
+    color: var(--accent-color);
+    margin-left: 15px;
+    text-decoration: none;
+}
+
+.features {
+    padding: 60px 0;
+    text-align: center;
+    color: var(--text-primary);
+}
+
+.features h2 {
+    font-size: 2em;
+    margin-bottom: 40px;
+    color: var(--accent-color);
+}
+
+.feature-grid {
+    display: flex;
+    justify-content: space-around;
+    gap: 30px;
+    flex-wrap: wrap; /* Garante responsividade básica */
+}
+
+.feature-item {
+    background-color: var(--bg-nav);
+    padding: 30px;
+    border-radius: 8px;
+    width: 30%;
+    min-width: 250px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    
+}
+
+.dark-theme .feature-item {
+     box-shadow: 0 4px 8px rgba(89, 103, 255, 0.15);
+}
+
+.feature-item:hover {
+    transform: translateY(-5px);
+}
+
+.feature-item span {
+    font-size: 3em;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.feature-item h3 {
+    color: var(--accent-color);
+    margin-top: 0;
+}
+#tema{
+    background-color: var(--button-bg); /* #0A1128 (claro) /// #9bb2ff (escuro) */  
+    position:fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 25%;
+    border-color: var(--accent-color); /* #5967ff */
+    cursor: pointer;
+    box-shadow: 0 0 10px var(--shadow-color);
+    color:#9bb2ff;
+    transition: all 0.1s ease-in-out;
+    justify-content: center; 
+    display: flex;
+    align-items: center;
+}
+#tema:hover{
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(89, 103, 255, 0.7);
+}
+
+#tema svg { 
+    width: 24px; 
+    height: 24px; 
+    fill: currentColor; 
+    color: var(--button-icon-color); 
+    transition: color 0.3s;
+}
+
+/* Tira o icone da lua e mostra o do Sol quando esta no modo escuro */
+.dark-theme #moon-icon {
+    display: none;
+}
+.dark-theme #sun-icon {
+    display: block;
+}
+#sun-icon { /* Pro Sol comecar oculto */
+    display: none;
+}
+
+/* --- RESPONSIVIDADE BÁSICA --- */
+@media (max-width: 800px) {
+    .hero {
+        flex-direction: column; /* Pilha verticalmente */
+        text-align: center;
+    }
+    .hero-info, .hero-image-container {
+        max-width: 100%;
+    }
+    .cta-buttons {
+        justify-content: center;
+    }
+    .feature-grid {
+        justify-content: center;
+    }
+}

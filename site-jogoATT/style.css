@@ -1,3 +1,8 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 :root{
     --bg-main: #9bb2ff; /* Cor de fundo principal clara */
     --bg-nav: #060b1a;
@@ -24,38 +29,47 @@ body {
 }
 
 nav {
-    font-family:Arial, Helvetica, sans-serif;
+    /* font-family:Arial, Helvetica, sans-serif; */
     background-color: var(--bg-nav);
     display: flex;
     justify-content: space-between; /* Deixa cada item nas extremidades */
     color: var(--text-primary); /* #B1B7D1 */
     padding:20px 30px;
     margin: 0;
+    align-items: center;
     box-shadow: 0 2px 9px var(--shadow-color);
     font-weight: 900;
+    
 }
 
-.links {
+.nav-list {
     display: flex;
     gap: 30px;
+    list-style: none;
+    align-items: center;
 }
+
+
 nav a {
     color: var(--text-primary); /* #B1B7D1 */
     text-decoration: none;
     transition: color 0.2s;
 }
 
-nav a:hover {
+
+nav ul a:hover {
     color: var(--accent-color); /* #5967ff */
     text-decoration: underline;
     text-decoration-thickness: 2px;
     text-underline-offset: 18px;
 }
 
-#game_name{
+.logo {
     color: var(--accent-color);
     margin-left: 15px;
-    text-decoration: none;
+    font-size: 24px;
+    text-transform: uppercase   ;
+    letter-spacing: 4px;
 }
 
 .features {
@@ -135,6 +149,14 @@ nav a:hover {
     color: var(--button-icon-color); 
     transition: color 0.3s;
 }
+
+.github-svg {
+    width: 30px;
+    height: 30px;
+    position: relative;
+    transition: opacity 0.3s;
+    vertical-align: middle;
+}   
 
 /* Tira o icone da lua e mostra o do Sol quando esta no modo escuro */
 .dark-theme #moon-icon {
